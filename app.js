@@ -9,11 +9,25 @@ app.use(express.json());
 app.use(express.urlencoded());
 
 
+// GET function to get topics in library   -->  /library/topics
+app.get('/library/topics', function(req, res) {         // mocked for now
+    let response = ['calculus', 'first order logic'];
+    res.status(200).send(response);
+});
+
+// GET function to search for topics by name
+app.get('/search/topics/:value', function(req, res) {
+    let value = req.params.value;
+    console.log("search value is:", value);         ////
+    let response = ['calculus', 'first order logic'];           // mocked for now
+    res.status(200).send(response);
+})
+
+// POST function to add a topic to the library
 
 
 
-
-
+// POST / DELETE function to remove a topic from the library
 
 
 

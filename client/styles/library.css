@@ -1,0 +1,20 @@
+
+#libraryContainer {
+    display: grid;
+    border: solid 3px silver;
+    margin: auto;
+    width: 50%;
+    padding: 1%;
+}
+
+.shelf {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+.label {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: blueviolet;
+}

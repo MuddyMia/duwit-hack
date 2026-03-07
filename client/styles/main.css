@@ -1,0 +1,31 @@
+
+.navbar {
+    background-color: cornflowerblue !important;
+}
+#searchDetails {     /* adding some touches to the search box */
+  display: inline ;  /* so the bloody button would be inline with the search bar!! */
+  width: auto; 
+  vertical-align: middle;
+  box-shadow: none !important; /* to remove the shadow */
+}
+.libraryLink {
+    border-radius: 5px;
+    background-color: #f0efef;
+    padding: 3px;
+    margin-right: auto;
+    margin-left: 5%;
+    align-content: center;
+}
+.link {
+    display: inline flex;
+}
+/* changing some of the search button's features */
+#btn {
+    color: #F8F9FA!important;
+    margin-left: 5px !important;
+}
+.btn:hover {
+    background-color: #f8f9fa6e;
+}
+
+

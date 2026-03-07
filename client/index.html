@@ -8,8 +8,36 @@
 </head>
 
 <body style="background-color: #F8F9FA;">
-    <script src="index.js" defer></script>
+<script src="index.js" defer></script>
 
+<!-- navbar -->
+<nav class="navbar navbar-light bg-light" style="padding-left: 7%;">
+    
+    <form class="form-inline" id="nav-search">
+        <input class="form-control" type="search" placeholder="Search" name="topic" id="searchDetails">
+        <button class="btn btn-outline-light" type="submit" id="btn">
+            <svg 
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+        </button>
+    </form>
+   
+    <div class="libraryLink">          
+        <p class="link"> <a href="library.html"> Library </a> </p>
+    </div>
+</nav>
+
+<div class="topics" id="topicTable">
+
+</div>
+
+<template id="topicCardTemplate">
+    <div class="card">
+        <div class="label" topic-name-slot></div>
+        <button class="topicCardButton"> add </button>
+    </div>
+</template>
 
 
 </body>
