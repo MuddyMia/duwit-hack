@@ -1,0 +1,23 @@
+
+.hide {
+    display: none !important;
+}
+
+#flashcardContainer {
+    border: solid 3px silver;
+    margin: auto;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.flashcard {
+    display: inline flex;
+}
+
+.question {
+    color: blueviolet;
+}
+.answer {
+    color: brown;
+}

@@ -15,13 +15,32 @@ app.get('/library/topics', function(req, res) {         // mocked for now
     res.status(200).send(response);
 });
 
-// GET function to search for topics by name
+// GET function to search for topics by name         -->  /search/topics/:value
 app.get('/search/topics/:value', function(req, res) {
     let value = req.params.value;
     console.log("search value is:", value);         ////
+
     let response = ['calculus', 'first order logic'];           // mocked for now
     res.status(200).send(response);
-})
+});
+
+// GET function to return questions by topic    --> /:topic/questions
+app.get('/:topic/questions', function(req, res) {
+    let topic = req.params.topic;
+    console.log("topic is:", topic);        //
+
+    let response = ['q1', 'q2'];            // mocked for now
+    res.status(200).send(response);
+});
+// GET function to return answers by topic    --> /:topic/answers
+app.get('/:topic/answers', function(req, res) {
+    let topic = req.params.topic;
+    console.log("topic is:", topic);        //
+
+    let response = ['a1', 'a2'];            // mocked for now
+    res.status(200).send(response);
+});
+
 
 // POST function to add a topic to the library
 
