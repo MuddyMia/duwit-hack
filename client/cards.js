@@ -3,23 +3,16 @@
 const cardHolder = document.getElementById("flashcardContainer");
 let questions, answers, n;
 let i = 0;
-let topic = "goobers"
 
 async function getQuestionsAndAnswers() {
-    let url = '/' + topic + '/questions';
+    let url = '/test/questions';
     console.log("url:", url);           ///
     let response = await fetch(url);
     if (response.ok) {
-        questions = await response.json();
+        responseJSON = await response.json();
+        questions = responseJSON.questions;
+        answers = responseJSON.answers;
         n = questions.length;
-    } else {
-        alert('Problem with request ' + response.statusText);
-    };
-    url = '/' + topic + '/answers';
-    console.log("url:", url);           ///
-    response = await fetch(url);
-    if (response.ok) {
-        answers = await response.json();
     } else {
         alert('Problem with request ' + response.statusText);
     };
@@ -46,10 +39,8 @@ function swapCards() {
         i++;
     } else {
         cardHolder.classList.add("hide");
-        console.log("thing", cardHolder);
     };
 };
-
 
 function fillCard(card, q, a) {
     let question = card.querySelector('[question]');
