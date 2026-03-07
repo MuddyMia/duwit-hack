@@ -1,0 +1,28 @@
+{
+    "logic": [
+        {
+            "name": "Propositional Logic and Semantic Tableaux",
+            "id": 0,
+            "questions": [
+                " What is the primary purpose of a Semantic Tableau in propositional logic?\n",
+                " In the context of Semantic Tableaux, what does it mean when a branch is \"closed\"?\n"
+            ],
+            "answers": [
+                " To determine the satisfiability of a set of formulas by systematically decomposing complex propositions into simpler components until a contradiction or a model is found.\n\n",
+                " A branch is closed when it contains both a proposition and its negation (e.g., $P$ and $\\neg P$), indicating that the branch leads to a contradiction and does not contribute to a satisfying assignment."
+            ]
+        },
+        {
+            "name": "First-Order Predicate Calculus and Model Theory",
+            "id": 1,
+            "questions": [
+                " In First-Order Predicate Calculus, what is the difference between a free variable and a bound variable?\n",
+                " In Model Theory, what does it mean for a structure $\\mathcal{M}$ to be a model of a theory $T$?\n"
+            ],
+            "answers": [
+                " A variable is bound if it falls within the scope of a quantifier (such as $\\forall$ or $\\exists$); otherwise, it is free.\n\n",
+                " A structure $\\mathcal{M}$ is a model of $T$ if every sentence in the theory $T$ is true when interpreted within the domain and relations defined by $\\mathcal{M}$."
+            ]
+        }
+    ]
+}
