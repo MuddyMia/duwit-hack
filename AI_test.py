@@ -7,7 +7,7 @@ model = genai.GenerativeModel("gemini-3.1-flash-lite-preview")
 
 def generate_question_bank(count, subject):
     #generates a question and answer based on a prompt
-    response = model.generate_content(f"Generate 10 flashcards about {subject} Format them EXACTLY like this:" \
+    response = model.generate_content(f"Generate 2 flashcards about {subject} Format them EXACTLY like this:" \
                                     "Q: <question>" \
                                     "A: <answer>")
     print(response.text) #for debugging
@@ -53,7 +53,7 @@ def generate_question_bank(count, subject):
 
 def generate_question_banks(topic):
     #generates a list of subtopics
-    response = model.generate_content(f"Generate 10 subtopics in this university level computer science {topic} Format them EXACTLY like this:" \
+    response = model.generate_content(f"Generate 5 subtopics in this university level computer science {topic} Format them EXACTLY like this:" \
                                     "T: <topic1>" \
                                     "T: <topic2>"
                                     )
@@ -91,6 +91,6 @@ def generate_question_banks(topic):
     file.close()
 
 #big test
-topics = ["logic","algorithms and data structures","calculus","linear algebra"]
+topics = ["Logic","Algorithms and data structures","Calculus","Linear algebra","Quantum Mechanics"]
 for topic in topics:
     generate_question_banks(topic)

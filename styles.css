@@ -1,0 +1,28 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    color: #333;
+    padding: 40px;
+}
+
+
+.fact {
+    color: #332222;
+    margin: 30px;
+    padding: 10px;
+}
+
+#food{
+    background-color: rgb(152, 213, 254);
+}
+
+#eco_tech{
+    background-color: rgb(152, 254, 174);
+}
+
+#cult_soc{
+    background-color: rgb(254, 152, 162);
+}
+
+#geo{
+    background-color: rgb(244, 152, 254);
+}

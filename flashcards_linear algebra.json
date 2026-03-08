@@ -1,0 +1,64 @@
+{
+    "Linear algebra": [
+        {
+            "name": "Vector Spaces and Subspaces",
+            "id": 0,
+            "questions": [
+                " What are the two closure properties required for a set to be a vector space?\n",
+                " What is the defining requirement for a subset $W$ of a vector space $V$ to be a subspace?\n"
+            ],
+            "answers": [
+                " A set must be closed under vector addition and closed under scalar multiplication.\n\n",
+                " $W$ must be a subset of $V$ that is itself a vector space under the same addition and scalar multiplication operations defined on $V$, which implies it must contain the zero vector and be closed under addition and scalar multiplication."
+            ]
+        },
+        {
+            "name": "Linear Transformations and Matrix Representation",
+            "id": 1,
+            "questions": [
+                " What are the two essential conditions a mapping $T: V \\to W$ must satisfy to be considered a linear transformation?\n",
+                " If $T: \\mathbb{R}^n \\to \\mathbb{R}^m$ is a linear transformation, how is the corresponding matrix $A$ constructed?\n"
+            ],
+            "answers": [
+                " 1) Additivity: $T(u + v) = T(u) + T(v)$, and 2) Homogeneity: $T(cu) = cT(u)$ for all vectors $u, v$ and scalars $c$.\n\n",
+                " The matrix $A$ is formed by using the images of the standard basis vectors $\\{e_1, e_2, ..., e_n\\}$ as columns, such that $A = [T(e_1) \\ T(e_2) \\ ... \\ T(e_n)]$."
+            ]
+        },
+        {
+            "name": "Eigenvalues and Eigenvectors",
+            "id": 2,
+            "questions": [
+                " What is the defining equation for an eigenvalue ($\\lambda$) and its corresponding eigenvector ($v$) for a square matrix $A$?\n",
+                " How do you find the eigenvalues of a square matrix $A$?\n"
+            ],
+            "answers": [
+                " $Av = \\lambda v$, where $v$ is a non-zero vector.\n\n",
+                " By solving the characteristic equation $\\det(A - \\lambda I) = 0$, where $I$ is the identity matrix."
+            ]
+        },
+        {
+            "name": "Orthogonality and Least Squares",
+            "id": 3,
+            "questions": [
+                " What is the condition for two vectors $u$ and $v$ to be orthogonal?\n",
+                " What is the purpose of the least squares method when a linear system $Ax = b$ is inconsistent?\n"
+            ],
+            "answers": [
+                " Two vectors are orthogonal if their dot product is equal to zero ($u \\cdot v = 0$).\n\n",
+                " The least squares method finds a vector $\\hat{x}$ that minimizes the distance $\\|b - A\\hat{x}\\|$, which is equivalent to solving the normal equation $A^TA\\hat{x} = A^Tb$."
+            ]
+        },
+        {
+            "name": "Singular Value Decomposition (SVD)",
+            "id": 4,
+            "questions": [
+                " What is the mathematical definition of Singular Value Decomposition (SVD)?\n",
+                " What is the geometric interpretation of SVD?\n"
+            ],
+            "answers": [
+                " SVD is the factorization of an $m \\times n$ matrix $A$ into the product of three matrices $U\\Sigma V^T$, where $U$ is an $m \\times m$ orthogonal matrix, $\\Sigma$ is an $m \\times n$ diagonal matrix of singular values, and $V^T$ is the transpose of an $n \\times n$ orthogonal matrix.\n\n",
+                " SVD represents a linear transformation as a sequence of three geometric operations: a rotation (or reflection) in the domain space ($V^T$), a scaling along the principal axes ($\\Sigma$), and a second rotation (or reflection) in the codomain space ($U$)."
+            ]
+        }
+    ]
+}

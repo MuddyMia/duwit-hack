@@ -1,0 +1,64 @@
+{
+    "Algorithms and data structures": [
+        {
+            "name": "Asymptotic Analysis and Complexity Classes",
+            "id": 0,
+            "questions": [
+                " What is the primary purpose of using Big O notation in asymptotic analysis?\n",
+                " Which complexity class represents an algorithm whose running time remains constant regardless of the input size?\n"
+            ],
+            "answers": [
+                " It describes the upper bound of an algorithm's running time or space requirements as the input size approaches infinity, focusing on growth rate rather than constant factors.\n\n",
+                " O(1), also known as constant time complexity."
+            ]
+        },
+        {
+            "name": "Advanced Tree Structures and Heaps",
+            "id": 1,
+            "questions": [
+                " What is the primary difference between a Min-Max Heap and a standard Binary Heap?\n",
+                " How does a B-Tree maintain balance during insertion when a node exceeds its maximum capacity?\n"
+            ],
+            "answers": [
+                " A Min-Max Heap is a complete binary tree that provides constant time access to both the minimum and maximum elements by alternating levels: nodes at even levels store the minimum of their subtree, while nodes at odd levels store the maximum.\n\n",
+                " When a node reaches its maximum capacity (degree), it undergoes a \"split\" operation where the median key is promoted to the parent node, and the remaining keys are divided into two new child nodes, ensuring the tree remains balanced and height-constrained."
+            ]
+        },
+        {
+            "name": "Graph Traversal and Network Flow Algorithms",
+            "id": 2,
+            "questions": [
+                " What is the primary difference between Breadth-First Search (BFS) and Depth-First Search (DFS) in terms of graph traversal?\n",
+                " According to the Max-Flow Min-Cut theorem, what is the relationship between the maximum flow in a flow network and its minimum cut?\n"
+            ],
+            "answers": [
+                " BFS explores neighbor nodes layer by layer using a queue, making it ideal for finding the shortest path in unweighted graphs, while DFS explores as far as possible along each branch using a stack (or recursion), which is often used for topological sorting or cycle detection.\n\n",
+                " The theorem states that the maximum amount of flow passing from the source to the sink is exactly equal to the total capacity of the edges in the minimum cut, which is the smallest set of edges whose removal disconnects the source from the sink."
+            ]
+        },
+        {
+            "name": "Dynamic Programming and Memoization Techniques",
+            "id": 3,
+            "questions": [
+                " What is the core difference between Dynamic Programming and simple recursion?\n",
+                " What is the specific purpose of memoization in Dynamic Programming?\n"
+            ],
+            "answers": [
+                " Dynamic Programming solves complex problems by breaking them into overlapping subproblems and storing the results of those subproblems to avoid redundant calculations, whereas simple recursion often recalculates the same subproblems repeatedly.\n\n",
+                " Memoization is a top-down optimization technique used to cache the results of expensive function calls so that when the same inputs occur again, the function can return the cached result instead of recomputing it."
+            ]
+        },
+        {
+            "name": "Randomized Algorithms and Probabilistic Data Structures",
+            "id": 4,
+            "questions": [
+                " What is the primary difference between a Monte Carlo algorithm and a Las Vegas algorithm?\n",
+                " How does a Bloom filter achieve space efficiency while allowing for false positives?\n"
+            ],
+            "answers": [
+                " A Monte Carlo algorithm has a deterministic running time but a probability of producing an incorrect result, whereas a Las Vegas algorithm always produces the correct result but has a randomized running time.\n\n",
+                " It uses a bit array and multiple hash functions to map elements; it can confirm if an item is definitely not in the set, but it cannot definitively confirm presence due to the possibility of hash collisions."
+            ]
+        }
+    ]
+}
