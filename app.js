@@ -8,22 +8,45 @@ app.use(express.static('client'));
 app.use(express.json());  
 app.use(express.urlencoded());
 
+const library = require('./json_stuff/library.json');
+const topics = require('./json_stuff/topics.json');
+
 let testTopic;
 
 // GET function to get topics in library   -->  /library/topics
-app.get('/library/topics', function(req, res) {         // mocked for now
-    let response = [{"name":'calculus',"id":1}, {"name":'first order logic', "id":2}]; 
+app.get('/library/topics', function(req, res) {
+    let response = new Array;
+    for (const topic of library) {
+        response.push({"name":topic.name, "id":topic.id});
+    };
     res.status(200).send(response);
 });
 
 // GET function to search for topics by name         -->  /search/topics/:value
 app.get('/search/topics/:value', function(req, res) {
     let value = req.params.value;
-    console.log("search value is:", value);         ////
-    // need to also filter out ones in the library already
 
-    let response = [{"name":'calculus',"id":1}, {"name":'first order logic', "id":2}];           // mocked for now
-    res.status(200).send(response);
+    if (value=="§") {       // was empty
+        res.status(400).send("empty search");
+        return;
+    } else if (value=="§§") {       // was a space
+        value = " "
+    } else {
+        value = value.toLowerCase();
+    };
+
+    const match = new Array;
+    topics.forEach( topic => {
+        if (topic.name.toLowerCase().includes(value)) {
+            // need to also filter out ones in the library already
+            let topicIndex = library.findIndex(entry => entry.id == topic.id);
+            if (topicIndex==-1) {
+                match.push({"name":topic.name, "id":topic.id});         // not in library
+            };
+        };
+    });
+
+    res.status(200).send(match);
 });
 
 // GET function to return questions by topic    --> /:topic/questions
@@ -39,14 +62,26 @@ app.get('/test/questions', function(req, res) {
 // POST function to add a topic to the library by id         --> /library/new
 app.post('/library/new', function(req, res) {
     topicID = req.body.id;
-
     // identify topic
+    let topicIndex = topics.findIndex(topic => topic.id == topicID);
+    if (topicIndex==-1) {
+        res.status(400).send("topic not found");
+        return };
+    let topicToAdd = topics[topicIndex];
+    let newEntry = {"name":topicToAdd.name, "id":topicToAdd.id};
+    library.push(newEntry);
+    try {
+        fs.writeFileSync(
+            './json_stuff/library.json', 
+            JSON.stringify(library, null, 2)  // we want 2 indents and the space to fill with null (empty)
+        );                                   // literally just making the json file stay pretty print
 
-    // add it to library.json       --> maybe with id as index?
-
-    console.log("added");           ///
-    res.status(200);            // mocked
-})
+        res.status(200).send("post successful");
+    } 
+    catch(e){
+        res.status(500).send("something went wrong");
+    };
+});
 
 // POST function to set the test topic       --> /test
 app.post('/test', function(req, res) {

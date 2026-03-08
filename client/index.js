@@ -12,6 +12,12 @@ async function topicOptions(e) {
     let searchValue = new FormData(inputForm);
     searchValue = Object.fromEntries(searchValue.entries()).topic;
 
+    if (!searchValue) {         // for when its just empty or a space
+        searchValue = "§";
+    } else if (searchValue==" ") {
+        searchValue = "§§";
+    };
+
     const url = "/search/topics/" + searchValue;            
     const response = await fetch(url);
     if (response.ok) {
@@ -47,6 +53,9 @@ async function topicListHandler(e) {
     });
     if (response.ok) {
         console.log("post successful");
+        
+        let card = item.closest('.card');       // need to remove it from list
+        card.classList.add("hide");
     } else {
         alert('Problem with POST request ' + response.statusText);
     };

@@ -22,7 +22,7 @@ const generationButton = document.getElementById("generateCardsButton");
 generationButton.addEventListener("click", generateCards);
 async function generateCards() {
     await getQuestionsAndAnswers();
-    cardHolder.classList.remove('hide');
+    cardHolder.classList.remove('hide');        // for some reason doesn't let you click it again
     swapCards();
 };
 
