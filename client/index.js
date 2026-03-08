@@ -6,7 +6,9 @@ const inputForm = document.getElementById("nav-search");
 inputForm.addEventListener('submit', topicOptions);
 async function topicOptions(e) {
     e.preventDefault();
-    window.removeEventListener("click", topicListHandler);
+
+    console.log("searching");           ///
+
     cardContainer.innerHTML = ''        // clear previous options
     const cardTemplate = document.getElementById("topicCardTemplate");
     let searchValue = new FormData(inputForm);
@@ -37,6 +39,7 @@ async function topicOptions(e) {
 };
 
 async function topicListHandler(e) {
+    window.removeEventListener("click", topicListHandler);
     let item = e.target;
     if (item.classList[0] !== "topicCardButton") {  
         return      // button not pressed
@@ -60,3 +63,10 @@ async function topicListHandler(e) {
         alert('Problem with POST request ' + response.statusText);
     };
 };
+
+const car = document.querySelector(".car-img");
+const container = document.getElementById("carAnimation");
+
+car.addEventListener("animationend", () => {
+    container.remove();   // deletes the whole animation from the page
+});
