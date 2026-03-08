@@ -1,6 +1,332 @@
 [
     {
-        "name": "calculus",
-        "id": 1
+        "id":0,
+        "name":"Algorithms and data structures", 
+        "topics": [
+            {
+                "name": "Asymptotic Analysis and Complexity Classes",
+                "id": 0,
+                "questions": [
+                    " What is the primary purpose of using Big O notation in asymptotic analysis?\n",
+                    " Which complexity class represents an algorithm whose running time remains constant regardless of the input size?\n"
+                ],
+                "answers": [
+                    " It describes the upper bound of an algorithm's running time or space requirements as the input size approaches infinity, focusing on growth rate rather than constant factors.\n\n",
+                    " O(1), also known as constant time complexity."
+                ]
+            },
+            {
+                "name": "Advanced Tree Structures and Heaps",
+                "id": 1,
+                "questions": [
+                    " What is the primary difference between a Min-Max Heap and a standard Binary Heap?\n",
+                    " How does a B-Tree maintain balance during insertion when a node exceeds its maximum capacity?\n"
+                ],
+                "answers": [
+                    " A Min-Max Heap is a complete binary tree that provides constant time access to both the minimum and maximum elements by alternating levels: nodes at even levels store the minimum of their subtree, while nodes at odd levels store the maximum.\n\n",
+                    " When a node reaches its maximum capacity (degree), it undergoes a \"split\" operation where the median key is promoted to the parent node, and the remaining keys are divided into two new child nodes, ensuring the tree remains balanced and height-constrained."
+                ]
+            },
+            {
+                "name": "Graph Traversal and Network Flow Algorithms",
+                "id": 2,
+                "questions": [
+                    " What is the primary difference between Breadth-First Search (BFS) and Depth-First Search (DFS) in terms of graph traversal?\n",
+                    " According to the Max-Flow Min-Cut theorem, what is the relationship between the maximum flow in a flow network and its minimum cut?\n"
+                ],
+                "answers": [
+                    " BFS explores neighbor nodes layer by layer using a queue, making it ideal for finding the shortest path in unweighted graphs, while DFS explores as far as possible along each branch using a stack (or recursion), which is often used for topological sorting or cycle detection.\n\n",
+                    " The theorem states that the maximum amount of flow passing from the source to the sink is exactly equal to the total capacity of the edges in the minimum cut, which is the smallest set of edges whose removal disconnects the source from the sink."
+                ]
+            },
+            {
+                "name": "Dynamic Programming and Memoization Techniques",
+                "id": 3,
+                "questions": [
+                    " What is the core difference between Dynamic Programming and simple recursion?\n",
+                    " What is the specific purpose of memoization in Dynamic Programming?\n"
+                ],
+                "answers": [
+                    " Dynamic Programming solves complex problems by breaking them into overlapping subproblems and storing the results of those subproblems to avoid redundant calculations, whereas simple recursion often recalculates the same subproblems repeatedly.\n\n",
+                    " Memoization is a top-down optimization technique used to cache the results of expensive function calls so that when the same inputs occur again, the function can return the cached result instead of recomputing it."
+                ]
+            },
+            {
+                "name": "Randomized Algorithms and Probabilistic Data Structures",
+                "id": 4,
+                "questions": [
+                    " What is the primary difference between a Monte Carlo algorithm and a Las Vegas algorithm?\n",
+                    " How does a Bloom filter achieve space efficiency while allowing for false positives?\n"
+                ],
+                "answers": [
+                    " A Monte Carlo algorithm has a deterministic running time but a probability of producing an incorrect result, whereas a Las Vegas algorithm always produces the correct result but has a randomized running time.\n\n",
+                    " It uses a bit array and multiple hash functions to map elements; it can confirm if an item is definitely not in the set, but it cannot definitively confirm presence due to the possibility of hash collisions."
+                ]
+            }
+        ]
+    },
+    {
+        "id":1,
+        "name":"Calculus" ,
+        "topics": [
+            {
+                "name": "Multivariable Differentiation and Partial Derivatives",
+                "id": 0,
+                "questions": [
+                    " What is the definition of the partial derivative of a function $f(x, y)$ with respect to $x$ at the point $(a, b)$?\n",
+                    " How is the gradient vector $\\nabla f(x, y)$ defined for a differentiable function $f$?\n"
+                ],
+                "answers": [
+                    " It is the limit $\\frac{\\partial f}{\\partial x}(a, b) = \\lim_{h \\to 0} \\frac{f(a+h, b) - f(a, b)}{h}$, which represents the rate of change of the function in the direction of the x-axis.\n\n",
+                    " The gradient vector is defined as $\\nabla f(x, y) = \\left\\langle \\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y} \\right\\rangle$, and it points in the direction of the steepest ascent of the function."
+                ]
+            },
+            {
+                "name": "Multiple Integration in Cartesian and Polar Coordinates",
+                "id": 1,
+                "questions": [
+                    " How do you transform a double integral from Cartesian coordinates $(x, y)$ to polar coordinates $(r, \\theta)$?\n",
+                    " What is the standard formula for evaluating a double integral over a rectangular region $[a, b] \\times [c, d]$ using Fubini's Theorem in Cartesian coordinates?\n"
+                ],
+                "answers": [
+                    " You replace $dx \\, dy$ with $r \\, dr \\, d\\theta$, substitute $x = r \\cos \\theta$ and $y = r \\sin \\theta$, and adjust the limits of integration to reflect the region in terms of $r$ and $\\theta$.\n\n",
+                    " $\\iint_R f(x, y) \\, dA = \\int_a^b \\int_c^d f(x, y) \\, dy \\, dx = \\int_c^d \\int_a^b f(x, y) \\, dx \\, dy$."
+                ]
+            },
+            {
+                "name": "Vector Fields, Line Integrals, and Surface Integrals",
+                "id": 2,
+                "questions": [
+                    " How is the line integral of a vector field $\\mathbf{F}$ along a curve $C$ defined in terms of the unit tangent vector $\\mathbf{T}$?\n",
+                    " What does the flux of a vector field $\\mathbf{F}$ across a surface $S$ represent, and how is it calculated using the unit normal vector $\\mathbf{n}$?\n"
+                ],
+                "answers": [
+                    " The line integral is defined as $\\int_C \\mathbf{F} \\cdot d\\mathbf{r} = \\int_a^b \\mathbf{F}(\\mathbf{r}(t)) \\cdot \\mathbf{r}'(t) \\, dt$, which represents the work done by the field along the curve.\n\n",
+                    " The flux represents the net \"flow\" of the field through the surface, calculated as $\\iint_S \\mathbf{F} \\cdot d\\mathbf{S} = \\iint_D \\mathbf{F}(\\mathbf{r}(u,v)) \\cdot (\\mathbf{r}_u \\times \\mathbf{r}_v) \\, du \\, dv$."
+                ]
+            },
+            {
+                "name": "The Fundamental Theorems of Vector Calculus: Green\u2019s, Stokes\u2019, and Divergence",
+                "id": 3,
+                "questions": [
+                    " What does the Divergence Theorem (Gauss's Theorem) state regarding the relationship between a volume integral and a surface integral?\n",
+                    " How does Stokes' Theorem relate the surface integral of a curl to a line integral?\n"
+                ],
+                "answers": [
+                    " It states that the outward flux of a vector field through a closed surface is equal to the integral of the divergence of that field over the volume enclosed by the surface: \u222fS F\u00b7dS = \u222dV (\u2207\u00b7F) dV.\n\n",
+                    " It states that the surface integral of the curl of a vector field over an open surface is equal to the line integral of that vector field along the boundary curve of the surface: \u222cS (\u2207\u00d7F)\u00b7dS = \u222eC F\u00b7dr."
+                ]
+            },
+            {
+                "name": "Infinite Sequences and Power Series Convergence Tests",
+                "id": 4,
+                "questions": [
+                    " What does the Divergence Test state about the series $\\sum_{n=1}^{\\infty} a_n$?\n",
+                    " According to the Ratio Test, what condition on the limit $L = \\lim_{n \\to \\infty} \\left| \\frac{a_{n+1}}{a_n} \\right|$ guarantees that a series converges absolutely?\n"
+                ],
+                "answers": [
+                    " If $\\lim_{n \\to \\infty} a_n \\neq 0$ or the limit does not exist, then the series $\\sum_{n=1}^{\\infty} a_n$ must diverge.\n\n",
+                    " The series converges absolutely if $L < 1$."
+                ]
+            }
+        ]
+    },
+    {
+        "id":2,
+        "name":"Linear algebra",
+        "topics": [
+            {
+                "name": "Vector Spaces and Subspaces",
+                "id": 0,
+                "questions": [
+                    " What are the two closure properties required for a set to be a vector space?\n",
+                    " What is the defining requirement for a subset $W$ of a vector space $V$ to be a subspace?\n"
+                ],
+                "answers": [
+                    " A set must be closed under vector addition and closed under scalar multiplication.\n\n",
+                    " $W$ must be a subset of $V$ that is itself a vector space under the same addition and scalar multiplication operations defined on $V$, which implies it must contain the zero vector and be closed under addition and scalar multiplication."
+                ]
+            },
+            {
+                "name": "Linear Transformations and Matrix Representation",
+                "id": 1,
+                "questions": [
+                    " What are the two essential conditions a mapping $T: V \\to W$ must satisfy to be considered a linear transformation?\n",
+                    " If $T: \\mathbb{R}^n \\to \\mathbb{R}^m$ is a linear transformation, how is the corresponding matrix $A$ constructed?\n"
+                ],
+                "answers": [
+                    " 1) Additivity: $T(u + v) = T(u) + T(v)$, and 2) Homogeneity: $T(cu) = cT(u)$ for all vectors $u, v$ and scalars $c$.\n\n",
+                    " The matrix $A$ is formed by using the images of the standard basis vectors $\\{e_1, e_2, ..., e_n\\}$ as columns, such that $A = [T(e_1) \\ T(e_2) \\ ... \\ T(e_n)]$."
+                ]
+            },
+            {
+                "name": "Eigenvalues and Eigenvectors",
+                "id": 2,
+                "questions": [
+                    " What is the defining equation for an eigenvalue ($\\lambda$) and its corresponding eigenvector ($v$) for a square matrix $A$?\n",
+                    " How do you find the eigenvalues of a square matrix $A$?\n"
+                ],
+                "answers": [
+                    " $Av = \\lambda v$, where $v$ is a non-zero vector.\n\n",
+                    " By solving the characteristic equation $\\det(A - \\lambda I) = 0$, where $I$ is the identity matrix."
+                ]
+            },
+            {
+                "name": "Orthogonality and Least Squares",
+                "id": 3,
+                "questions": [
+                    " What is the condition for two vectors $u$ and $v$ to be orthogonal?\n",
+                    " What is the purpose of the least squares method when a linear system $Ax = b$ is inconsistent?\n"
+                ],
+                "answers": [
+                    " Two vectors are orthogonal if their dot product is equal to zero ($u \\cdot v = 0$).\n\n",
+                    " The least squares method finds a vector $\\hat{x}$ that minimizes the distance $\\|b - A\\hat{x}\\|$, which is equivalent to solving the normal equation $A^TA\\hat{x} = A^Tb$."
+                ]
+            },
+            {
+                "name": "Singular Value Decomposition (SVD)",
+                "id": 4,
+                "questions": [
+                    " What is the mathematical definition of Singular Value Decomposition (SVD)?\n",
+                    " What is the geometric interpretation of SVD?\n"
+                ],
+                "answers": [
+                    " SVD is the factorization of an $m \\times n$ matrix $A$ into the product of three matrices $U\\Sigma V^T$, where $U$ is an $m \\times m$ orthogonal matrix, $\\Sigma$ is an $m \\times n$ diagonal matrix of singular values, and $V^T$ is the transpose of an $n \\times n$ orthogonal matrix.\n\n",
+                    " SVD represents a linear transformation as a sequence of three geometric operations: a rotation (or reflection) in the domain space ($V^T$), a scaling along the principal axes ($\\Sigma$), and a second rotation (or reflection) in the codomain space ($U$)."
+                ]
+            }
+        ]
+    },
+    {
+        "id":3,
+        "name":"Logic",
+        "topics": [
+            {
+                "name": "Propositional Logic and Semantic Tableaux",
+                "id": 0,
+                "questions": [
+                    " In propositional logic, what does it mean for a formula to be a tautology?\n",
+                    " What is the primary purpose of the semantic tableau method in propositional logic?\n"
+                ],
+                "answers": [
+                    " A formula is a tautology if it evaluates to true under every possible truth assignment to its propositional variables.\n\n",
+                    " It is a decision procedure used to determine the satisfiability of a set of formulas by systematically decomposing them into a tree structure to search for a countermodel."
+                ]
+            },
+            {
+                "name": "First-Order Predicate Calculus",
+                "id": 1,
+                "questions": [
+                    " What are the two primary quantifiers used in First-Order Predicate Calculus, and what do they represent?\n",
+                    " In First-Order Predicate Calculus, what is the difference between a constant and a variable?\n"
+                ],
+                "answers": [
+                    " The universal quantifier (\u2200), which represents \"for all,\" and the existential quantifier (\u2203), which represents \"there exists.\"\n\n",
+                    " A constant refers to a specific, fixed object in the domain of discourse, while a variable is a placeholder that can represent any object in the domain when bound by a quantifier."
+                ]
+            },
+            {
+                "name": "Resolution Refutation and Unification",
+                "id": 2,
+                "questions": [
+                    " What is the primary purpose of Resolution Refutation in first-order logic?\n",
+                    " What is Unification in the context of automated reasoning?\n"
+                ],
+                "answers": [
+                    " It is a proof technique used to determine if a statement is logically entailed by a knowledge base by negating the goal statement and attempting to derive a contradiction (the empty clause) through the resolution inference rule.\n\n",
+                    " It is the algorithmic process of finding a substitution for variables that makes two different logical expressions (literals) identical, which is a necessary precursor to applying the resolution rule in first-order logic."
+                ]
+            },
+            {
+                "name": "Modal Logic and Kripke Semantics",
+                "id": 3,
+                "questions": [
+                    " What is a Kripke frame in the context of Modal Logic?\n",
+                    " In Kripke semantics, what condition must be met for a modal formula $\\Box\\phi$ to be true at a world $w$?\n"
+                ],
+                "answers": [
+                    " A Kripke frame is a pair (W, R), where W is a non-empty set of \"possible worlds\" and R is a binary relation on W known as the accessibility relation, which defines which worlds are reachable from others.\n\n",
+                    " The formula $\\Box\\phi$ is true at world $w$ if and only if $\\phi$ is true in every world $v$ such that $wRv$ (i.e., all worlds accessible from $w$)."
+                ]
+            },
+            {
+                "name": "Computability Theory and the Halting Problem",
+                "id": 4,
+                "questions": [
+                    " What does the Halting Problem state regarding the existence of a general algorithm?\n",
+                    " Why is the Halting Problem considered \"undecidable\"?\n"
+                ],
+                "answers": [
+                    " It states that there is no general algorithm that can decide, for any arbitrary program and input, whether that program will eventually stop or run forever.\n\n",
+                    " It is undecidable because Alan Turing proved that any hypothetical program designed to solve it would lead to a logical contradiction, meaning such a program cannot exist."
+                ]
+            }
+        ]
+    },
+    {
+        "id":4,
+        "name":"Quantum Mechanics",
+        "topics": [
+            {
+                "name": "Mathematical Foundations of Quantum States and Hilbert Spaces",
+                "id": 0,
+                "questions": [
+                    " What defines a Hilbert space in the context of quantum mechanics?\n",
+                    " What does the Dirac notation $\\langle \\phi | \\psi \\rangle$ represent in a Hilbert space?\n"
+                ],
+                "answers": [
+                    " A Hilbert space is a complete complex inner product space, serving as the mathematical framework where quantum states are represented as unit vectors.\n\n",
+                    " It represents the inner product (or scalar product) of two quantum states, which provides the probability amplitude for the transition or overlap between the states $|\\psi\\rangle$ and $|\\phi\\rangle$."
+                ]
+            },
+            {
+                "name": "Quantum Gates, Circuits, and Universal Computation",
+                "id": 1,
+                "questions": [
+                    " What is a universal quantum gate set?\n",
+                    " How is a quantum circuit represented in the circuit model of computation?\n"
+                ],
+                "answers": [
+                    " A set of quantum gates that can approximate any unitary transformation on an arbitrary number of qubits to any desired degree of accuracy, such as the combination of the Hadamard, CNOT, and T gates.\n\n",
+                    " It is represented as a sequence of quantum gates applied to an initial state of qubits (usually $|0...0\\rangle$), moving through time from left to right, ending with a measurement to collapse the state into classical bits."
+                ]
+            },
+            {
+                "name": "Quantum Algorithms: Shor\u2019s, Grover\u2019s, and Complexity Classes",
+                "id": 2,
+                "questions": [
+                    " What is the primary computational advantage of Shor\u2019s algorithm compared to the best-known classical algorithms for integer factorization?\n",
+                    " In terms of complexity classes, how does Grover\u2019s algorithm affect the search space for an unstructured database?\n"
+                ],
+                "answers": [
+                    " Shor\u2019s algorithm provides an exponential speedup, running in polynomial time (O((log N)\u00b3)), whereas the best-known classical algorithm, the General Number Field Sieve, runs in sub-exponential time.\n\n",
+                    " Grover\u2019s algorithm provides a quadratic speedup, reducing the complexity of searching an unstructured database of N items from O(N) in classical computing to O(\u221aN) in the complexity class BQP (Bounded-error Quantum Polynomial time)."
+                ]
+            },
+            {
+                "name": "Quantum Error Correction and Fault-Tolerant Architectures",
+                "id": 3,
+                "questions": [
+                    " What is the primary purpose of Quantum Error Correction (QEC)?\n",
+                    " What is the definition of a Fault-Tolerant Architecture in quantum computing?\n"
+                ],
+                "answers": [
+                    " To protect quantum information from errors caused by decoherence and other noise by encoding a single logical qubit into a highly entangled state of multiple physical qubits.\n\n",
+                    " An architectural design where the implementation of gates and error correction procedures ensures that a single fault in any individual component does not cause an uncontrolled spread of errors that leads to a total system failure."
+                ]
+            },
+            {
+                "name": "Quantum Communication Protocols and Entanglement-Based Cryptography",
+                "id": 4,
+                "questions": [
+                    " What is the primary advantage of the Ekert91 (E91) protocol compared to traditional QKD protocols like BB84?\n",
+                    " How does entanglement swapping enable the functionality of a quantum repeater in long-distance quantum communication?\n"
+                ],
+                "answers": [
+                    " The E91 protocol utilizes quantum entanglement to detect eavesdropping; since the security is based on the violation of Bell's inequalities, any attempt by an eavesdropper to measure the particles collapses the entanglement, revealing the intrusion.\n\n",
+                    " It allows two quantum nodes that have never directly interacted to become entangled by performing a Bell state measurement on two particles that were each previously entangled with a particle at the respective nodes, effectively extending the range of quantum information transfer."
+                ]
+            }
+        ]
     }
 ]
