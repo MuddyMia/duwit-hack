@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>uni questions accelerate quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/cards.css">
+</head>
+
+<body style="background-color: #F8F9FA;">
+<script src="cards.js" defer></script>
+
+<h1>Test your knowledge</h1>
+
+<button id="generateCardsButton"> Generate question </button>
+
+<div id="flashcardContainer" class="hide">
+    
+</div>
+
+<template id="flashcardTemplate">
+    <div class="flashcard">
+        <div class="question" question ></div>
+        <div class="answer" answer ></div>
+    </div>
+</template>
+
+</body>
+</html>

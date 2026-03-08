@@ -8,7 +8,7 @@
   vertical-align: middle;
   box-shadow: none !important; /* to remove the shadow */
 }
-.libraryLink {
+.libraryLink{
     border-radius: 5px;
     background-color: #f0efef;
     padding: 3px;
@@ -28,4 +28,23 @@
     background-color: #f8f9fa6e;
 }
 
-
+.topicCardButton:hover{
+    background-color: #f8f9fa6e;
+}
+.topicCardButton {
+    width: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.label {
+    display: inline-flex;
+    margin: 5px;
+}
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

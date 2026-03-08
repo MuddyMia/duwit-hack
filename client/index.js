@@ -6,22 +6,48 @@ const inputForm = document.getElementById("nav-search");
 inputForm.addEventListener('submit', topicOptions);
 async function topicOptions(e) {
     e.preventDefault();
+    window.removeEventListener("click", topicListHandler);
     cardContainer.innerHTML = ''        // clear previous options
     const cardTemplate = document.getElementById("topicCardTemplate");
     let searchValue = new FormData(inputForm);
     searchValue = Object.fromEntries(searchValue.entries()).topic;
-    const url = "/search/topics/" + searchValue;
+
+    const url = "/search/topics/" + searchValue;            
     const response = await fetch(url);
     if (response.ok) {
         const topics = await response.json();
         const topicTable = topics.map(topic => {
             let card = cardTemplate.content.cloneNode(true).children[0];
             let name = card.querySelector('[topic-name-slot]');
-            name.textContent = topic;
+            name.textContent = topic.name;
+            card.id = topic.id;
             cardContainer.append(card);
             return card;
         });
+        window.addEventListener("click", topicListHandler);
     } else {
-    alert('Problem with request ' + response.statusText);
+    alert('Problem with request' , response.statusText);
+    };
+};
+
+async function topicListHandler(e) {
+    let item = e.target;
+    if (item.classList[0] !== "topicCardButton") {  
+        return      // button not pressed
+    };
+    // otherwise, find which button was pressed
+    let selectedTopic = item.closest('.card').id;
+    let request = {"id": selectedTopic};
+    const response = await fetch('/library/new', {
+        method: 'POST',
+        headers: {
+            'Content-Type':'application/json'
+        },
+        body: JSON.stringify(request)
+    });
+    if (response.ok) {
+        console.log("post successful");
+    } else {
+        alert('Problem with POST request ' + response.statusText);
     };
 };

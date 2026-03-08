@@ -9,12 +9,31 @@
 
 .shelf {
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-content: center;
+    gap: 5px;
+    margin: 5px;
 }
 
 .label {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: blueviolet;
+    display: inline-flex;
+}
+
+.hide {
+    display: none;
+}
+
+
+.testButton:hover, .deleteButton:hover{
+    background-color: #f8f9fa6e;
+}
+.testButton, .deleteButton {
+    width: 100px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
 }
