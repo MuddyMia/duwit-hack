@@ -1,0 +1,64 @@
+{
+    "Calculus": [
+        {
+            "name": "Multivariable Differentiation and Partial Derivatives",
+            "id": 0,
+            "questions": [
+                " What is the definition of the partial derivative of a function $f(x, y)$ with respect to $x$ at the point $(a, b)$?\n",
+                " How is the gradient vector $\\nabla f(x, y)$ defined for a differentiable function $f$?\n"
+            ],
+            "answers": [
+                " It is the limit $\\frac{\\partial f}{\\partial x}(a, b) = \\lim_{h \\to 0} \\frac{f(a+h, b) - f(a, b)}{h}$, which represents the rate of change of the function in the direction of the x-axis.\n\n",
+                " The gradient vector is defined as $\\nabla f(x, y) = \\left\\langle \\frac{\\partial f}{\\partial x}, \\frac{\\partial f}{\\partial y} \\right\\rangle$, and it points in the direction of the steepest ascent of the function."
+            ]
+        },
+        {
+            "name": "Multiple Integration in Cartesian and Polar Coordinates",
+            "id": 1,
+            "questions": [
+                " How do you transform a double integral from Cartesian coordinates $(x, y)$ to polar coordinates $(r, \\theta)$?\n",
+                " What is the standard formula for evaluating a double integral over a rectangular region $[a, b] \\times [c, d]$ using Fubini's Theorem in Cartesian coordinates?\n"
+            ],
+            "answers": [
+                " You replace $dx \\, dy$ with $r \\, dr \\, d\\theta$, substitute $x = r \\cos \\theta$ and $y = r \\sin \\theta$, and adjust the limits of integration to reflect the region in terms of $r$ and $\\theta$.\n\n",
+                " $\\iint_R f(x, y) \\, dA = \\int_a^b \\int_c^d f(x, y) \\, dy \\, dx = \\int_c^d \\int_a^b f(x, y) \\, dx \\, dy$."
+            ]
+        },
+        {
+            "name": "Vector Fields, Line Integrals, and Surface Integrals",
+            "id": 2,
+            "questions": [
+                " How is the line integral of a vector field $\\mathbf{F}$ along a curve $C$ defined in terms of the unit tangent vector $\\mathbf{T}$?\n",
+                " What does the flux of a vector field $\\mathbf{F}$ across a surface $S$ represent, and how is it calculated using the unit normal vector $\\mathbf{n}$?\n"
+            ],
+            "answers": [
+                " The line integral is defined as $\\int_C \\mathbf{F} \\cdot d\\mathbf{r} = \\int_a^b \\mathbf{F}(\\mathbf{r}(t)) \\cdot \\mathbf{r}'(t) \\, dt$, which represents the work done by the field along the curve.\n\n",
+                " The flux represents the net \"flow\" of the field through the surface, calculated as $\\iint_S \\mathbf{F} \\cdot d\\mathbf{S} = \\iint_D \\mathbf{F}(\\mathbf{r}(u,v)) \\cdot (\\mathbf{r}_u \\times \\mathbf{r}_v) \\, du \\, dv$."
+            ]
+        },
+        {
+            "name": "The Fundamental Theorems of Vector Calculus: Green\u2019s, Stokes\u2019, and Divergence",
+            "id": 3,
+            "questions": [
+                " What does the Divergence Theorem (Gauss's Theorem) state regarding the relationship between a volume integral and a surface integral?\n",
+                " How does Stokes' Theorem relate the surface integral of a curl to a line integral?\n"
+            ],
+            "answers": [
+                " It states that the outward flux of a vector field through a closed surface is equal to the integral of the divergence of that field over the volume enclosed by the surface: \u222fS F\u00b7dS = \u222dV (\u2207\u00b7F) dV.\n\n",
+                " It states that the surface integral of the curl of a vector field over an open surface is equal to the line integral of that vector field along the boundary curve of the surface: \u222cS (\u2207\u00d7F)\u00b7dS = \u222eC F\u00b7dr."
+            ]
+        },
+        {
+            "name": "Infinite Sequences and Power Series Convergence Tests",
+            "id": 4,
+            "questions": [
+                " What does the Divergence Test state about the series $\\sum_{n=1}^{\\infty} a_n$?\n",
+                " According to the Ratio Test, what condition on the limit $L = \\lim_{n \\to \\infty} \\left| \\frac{a_{n+1}}{a_n} \\right|$ guarantees that a series converges absolutely?\n"
+            ],
+            "answers": [
+                " If $\\lim_{n \\to \\infty} a_n \\neq 0$ or the limit does not exist, then the series $\\sum_{n=1}^{\\infty} a_n$ must diverge.\n\n",
+                " The series converges absolutely if $L < 1$."
+            ]
+        }
+    ]
+}

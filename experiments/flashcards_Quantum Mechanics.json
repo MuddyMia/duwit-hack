@@ -1,0 +1,64 @@
+{
+    "Quantum Mechanics": [
+        {
+            "name": "Mathematical Foundations of Quantum States and Hilbert Spaces",
+            "id": 0,
+            "questions": [
+                " What defines a Hilbert space in the context of quantum mechanics?\n",
+                " What does the Dirac notation $\\langle \\phi | \\psi \\rangle$ represent in a Hilbert space?\n"
+            ],
+            "answers": [
+                " A Hilbert space is a complete complex inner product space, serving as the mathematical framework where quantum states are represented as unit vectors.\n\n",
+                " It represents the inner product (or scalar product) of two quantum states, which provides the probability amplitude for the transition or overlap between the states $|\\psi\\rangle$ and $|\\phi\\rangle$."
+            ]
+        },
+        {
+            "name": "Quantum Gates, Circuits, and Universal Computation",
+            "id": 1,
+            "questions": [
+                " What is a universal quantum gate set?\n",
+                " How is a quantum circuit represented in the circuit model of computation?\n"
+            ],
+            "answers": [
+                " A set of quantum gates that can approximate any unitary transformation on an arbitrary number of qubits to any desired degree of accuracy, such as the combination of the Hadamard, CNOT, and T gates.\n\n",
+                " It is represented as a sequence of quantum gates applied to an initial state of qubits (usually $|0...0\\rangle$), moving through time from left to right, ending with a measurement to collapse the state into classical bits."
+            ]
+        },
+        {
+            "name": "Quantum Algorithms: Shor\u2019s, Grover\u2019s, and Complexity Classes",
+            "id": 2,
+            "questions": [
+                " What is the primary computational advantage of Shor\u2019s algorithm compared to the best-known classical algorithms for integer factorization?\n",
+                " In terms of complexity classes, how does Grover\u2019s algorithm affect the search space for an unstructured database?\n"
+            ],
+            "answers": [
+                " Shor\u2019s algorithm provides an exponential speedup, running in polynomial time (O((log N)\u00b3)), whereas the best-known classical algorithm, the General Number Field Sieve, runs in sub-exponential time.\n\n",
+                " Grover\u2019s algorithm provides a quadratic speedup, reducing the complexity of searching an unstructured database of N items from O(N) in classical computing to O(\u221aN) in the complexity class BQP (Bounded-error Quantum Polynomial time)."
+            ]
+        },
+        {
+            "name": "Quantum Error Correction and Fault-Tolerant Architectures",
+            "id": 3,
+            "questions": [
+                " What is the primary purpose of Quantum Error Correction (QEC)?\n",
+                " What is the definition of a Fault-Tolerant Architecture in quantum computing?\n"
+            ],
+            "answers": [
+                " To protect quantum information from errors caused by decoherence and other noise by encoding a single logical qubit into a highly entangled state of multiple physical qubits.\n\n",
+                " An architectural design where the implementation of gates and error correction procedures ensures that a single fault in any individual component does not cause an uncontrolled spread of errors that leads to a total system failure."
+            ]
+        },
+        {
+            "name": "Quantum Communication Protocols and Entanglement-Based Cryptography",
+            "id": 4,
+            "questions": [
+                " What is the primary advantage of the Ekert91 (E91) protocol compared to traditional QKD protocols like BB84?\n",
+                " How does entanglement swapping enable the functionality of a quantum repeater in long-distance quantum communication?\n"
+            ],
+            "answers": [
+                " The E91 protocol utilizes quantum entanglement to detect eavesdropping; since the security is based on the violation of Bell's inequalities, any attempt by an eavesdropper to measure the particles collapses the entanglement, revealing the intrusion.\n\n",
+                " It allows two quantum nodes that have never directly interacted to become entangled by performing a Bell state measurement on two particles that were each previously entangled with a particle at the respective nodes, effectively extending the range of quantum information transfer."
+            ]
+        }
+    ]
+}

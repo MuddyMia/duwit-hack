@@ -1,0 +1,7 @@
+[
+    " What is the difference between a universal quantifier ($\\forall$) and an existential quantifier ($\\exists$)?\n",
+    " What is a predicate in predicate logic?\n"
+][
+    " A universal quantifier ($\\forall$) asserts that a property holds for every element in a domain, while an existential quantifier ($\\exists$) asserts that the property holds for at least one element in the domain.\n\n",
+    " A predicate is a property or relation that describes the state or characteristics of one or more variables (e.g., $P(x)$), which becomes a proposition once the variables are assigned specific values from a domain."
+]

@@ -1,0 +1,64 @@
+{
+    "Logic": [
+        {
+            "name": "Propositional Logic and Semantic Tableaux",
+            "id": 0,
+            "questions": [
+                " In propositional logic, what does it mean for a formula to be a tautology?\n",
+                " What is the primary purpose of the semantic tableau method in propositional logic?\n"
+            ],
+            "answers": [
+                " A formula is a tautology if it evaluates to true under every possible truth assignment to its propositional variables.\n\n",
+                " It is a decision procedure used to determine the satisfiability of a set of formulas by systematically decomposing them into a tree structure to search for a countermodel."
+            ]
+        },
+        {
+            "name": "First-Order Predicate Calculus",
+            "id": 1,
+            "questions": [
+                " What are the two primary quantifiers used in First-Order Predicate Calculus, and what do they represent?\n",
+                " In First-Order Predicate Calculus, what is the difference between a constant and a variable?\n"
+            ],
+            "answers": [
+                " The universal quantifier (\u2200), which represents \"for all,\" and the existential quantifier (\u2203), which represents \"there exists.\"\n\n",
+                " A constant refers to a specific, fixed object in the domain of discourse, while a variable is a placeholder that can represent any object in the domain when bound by a quantifier."
+            ]
+        },
+        {
+            "name": "Resolution Refutation and Unification",
+            "id": 2,
+            "questions": [
+                " What is the primary purpose of Resolution Refutation in first-order logic?\n",
+                " What is Unification in the context of automated reasoning?\n"
+            ],
+            "answers": [
+                " It is a proof technique used to determine if a statement is logically entailed by a knowledge base by negating the goal statement and attempting to derive a contradiction (the empty clause) through the resolution inference rule.\n\n",
+                " It is the algorithmic process of finding a substitution for variables that makes two different logical expressions (literals) identical, which is a necessary precursor to applying the resolution rule in first-order logic."
+            ]
+        },
+        {
+            "name": "Modal Logic and Kripke Semantics",
+            "id": 3,
+            "questions": [
+                " What is a Kripke frame in the context of Modal Logic?\n",
+                " In Kripke semantics, what condition must be met for a modal formula $\\Box\\phi$ to be true at a world $w$?\n"
+            ],
+            "answers": [
+                " A Kripke frame is a pair (W, R), where W is a non-empty set of \"possible worlds\" and R is a binary relation on W known as the accessibility relation, which defines which worlds are reachable from others.\n\n",
+                " The formula $\\Box\\phi$ is true at world $w$ if and only if $\\phi$ is true in every world $v$ such that $wRv$ (i.e., all worlds accessible from $w$)."
+            ]
+        },
+        {
+            "name": "Computability Theory and the Halting Problem",
+            "id": 4,
+            "questions": [
+                " What does the Halting Problem state regarding the existence of a general algorithm?\n",
+                " Why is the Halting Problem considered \"undecidable\"?\n"
+            ],
+            "answers": [
+                " It states that there is no general algorithm that can decide, for any arbitrary program and input, whether that program will eventually stop or run forever.\n\n",
+                " It is undecidable because Alan Turing proved that any hypothetical program designed to solve it would lead to a logical contradiction, meaning such a program cannot exist."
+            ]
+        }
+    ]
+}
