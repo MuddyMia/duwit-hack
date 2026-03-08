@@ -11,7 +11,7 @@ app.use(express.urlencoded());
 const library = require('./json_stuff/library.json');
 const topics = require('./json_stuff/topics.json');
 
-let testTopic;
+let testTopic, subTopic;
 
 // GET function to get topics in library   -->  /library/topics
 app.get('/library/topics', function(req, res) {
@@ -51,11 +51,25 @@ app.get('/search/topics/:value', function(req, res) {
 
 // GET function to return questions by topic    --> /:topic/questions
 app.get('/test/questions', function(req, res) {
-    console.log("topic is:", testTopic);        //
+    let topicIndex = topics.findIndex(topic => topic.id == testTopic);
+    if (topicIndex==-1) {
+        res.status(500).send("something went wrong");
+        return };
+    let testingTopic = topics[topicIndex];
 
-    let questions = ['q1', 'q2'];            // mocked for now
-    let answers = ['a1', 'a2'];
+    console.log("testing subject:", testingTopic.name);           ////
+
+    let subTopicIndex = testingTopic.topics.findIndex(subtopic => subtopic.id == subTopic);
+    if (subTopicIndex==-1) {
+        res.status(500).send("something went wrong");
+        return };
+    let test = testingTopic.topics[subTopicIndex];
+    console.log("testing topic:", test.name);           ////
+
+    let questions = test.questions;
+    let answers = test.answers;
     let response = {questions, answers};
+    console.log("questions and answers:", response);            //////
     res.status(200).send(response);
 });
 
@@ -83,13 +97,23 @@ app.post('/library/new', function(req, res) {
     };
 });
 
-// POST function to set the test topic       --> /test
+// POST function to set the test topic and get the subtopics        --> /test
 app.post('/test', function(req, res) {
     testTopic = req.body.id;
-
     console.log("set test topic:", testTopic);       ///
 
-    res.status(200);
+    let topicIndex = topics.findIndex(topic => topic.id == testTopic);
+    let topic = topics[topicIndex];
+    let subTopics = topic.topics;
+    res.status(200).send(subTopics);
+});
+
+// POST function to set the test subtopic       --> /test/subtopic
+app.post('/test/subtopic', function(req, res) {
+    subTopic = req.body.id;
+    console.log("set test sub-topic:", subTopic);       ///
+
+     res.status(200).send("post successful");
 });
 
 // POST / DELETE function to remove a topic from the library         --> /library/remove

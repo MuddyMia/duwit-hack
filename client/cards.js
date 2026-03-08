@@ -6,10 +6,9 @@ let i = 0;
 
 async function getQuestionsAndAnswers() {
     let url = '/test/questions';
-    console.log("url:", url);           ///
     let response = await fetch(url);
     if (response.ok) {
-        responseJSON = await response.json();
+        const responseJSON = await response.json();
         questions = responseJSON.questions;
         answers = responseJSON.answers;
         n = questions.length;
@@ -34,7 +33,6 @@ function swapCards() {
         cardHolder.innerHTML = '';
         let card = cardTemplate.content.cloneNode(true).children[0];
         card = fillCard(card, questions[i], answers[i]);
-        console.log("question", questions[i]);         ////
         cardHolder.addEventListener("click", flashcardQuestion);
         i++;
     } else {
